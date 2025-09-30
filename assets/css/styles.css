@@ -43,7 +43,7 @@
 /* Responsive typography */
 @media screen and (max-width: 1024px) {
   :root {
-    --big-font-size: 3rem;
+    --big-font-size: 3.5rem;
     --h1-font-size: 2rem;
     --h2-font-size: 1.25rem;
     --h3-font-size: 1.125rem;
@@ -397,7 +397,7 @@ textarea {
 /*=============== HOME ===============*/
 .home-container {
   /* padding-block: 4.25rem; */
-  padding-block: 8.5rem;
+  padding-block: 9rem;
 }
 .home-content {
   position: relative;
@@ -454,9 +454,10 @@ textarea {
   transform: translateY(-50%);
 }
 .home-img-wrapper {
-  width: clamp(21rem, 12.6rem + 33.6vw, 42rem);
+  /* width: clamp(21rem, 12.6rem + 33.6vw, 42rem); */
   border-radius: 0 0 100vw 100vw;
   overflow: hidden;
+  animation: floatImage 4s ease-in-out infinite;
 }
 .home-img-wrapper::before {
   content: '';
@@ -472,7 +473,7 @@ textarea {
   aspect-ratio: 21/25;
   object-fit: cover;
   /* my image resize width */
-  width: 650px;
+  width: 600px;
 }
 .home-data {
   border: 2px solid var(--border-color);
@@ -533,6 +534,7 @@ textarea {
 .home-description {
   font-size: var(--large-font-size);
   max-width: 520px;
+  margin-top: 1.5rem;
 }
 .home-socials {
   margin-block: 1.75rem 2.5rem;
@@ -902,7 +904,7 @@ textarea {
 
 /*=============== CONTACT ===============*/
 .contact {
-  padding-bottom: 14rem;
+  padding-bottom: 4rem;
   position: relative;
 }
 .contact-container {
@@ -1134,6 +1136,18 @@ textarea {
   }
 }
 
+/* home-img-wrapper */
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2.4rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
 
 
