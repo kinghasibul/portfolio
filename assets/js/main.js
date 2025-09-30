@@ -276,7 +276,7 @@ document.querySelectorAll('input[name="body-theme"]').forEach((input) => {
 /*=============== SCROLL REVEAL ===============*/
 
 ScrollReveal({ 
-    reset: true,
+    //reset: true,
     distance: '80px',
     duration: 2000,
     delay: 200
@@ -286,3 +286,4 @@ ScrollReveal().reveal('.section-title,.animation-top', { origin: 'top'});
 ScrollReveal().reveal('.animation-right', { origin: 'right'});
 ScrollReveal().reveal('.animation-left', { origin: 'left'});
 ScrollReveal().reveal('.animation-bottom,.swiper-pagination', { origin: 'bottom'});
+
