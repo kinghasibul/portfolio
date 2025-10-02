@@ -1286,6 +1286,9 @@ textarea {
   .work-container {
     grid-template-columns: fit-content(420px);
   }
+  .resume-container {
+    width: 95%;
+  }
   .footer-container {
     flex-direction: column;
     row-gap: 1.25rem;
