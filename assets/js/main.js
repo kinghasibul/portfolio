@@ -196,12 +196,13 @@ contactName = document.getElementById('contact-name'),
 contactEmail = document.getElementById('contact-email'),
 contactSubject = document.getElementById('contact-subject'),
 contactMessage = document.getElementById('contact-message'),
-message = document.getElementById('massage');
+message = document.getElementById('message');
 
-const sendEmail = (e) =>{
+const sendEmail = (e) => {
     e.preventDefault();
 
     if(contactName.value === '' || contactEmail.value === '' || contactSubject.value === '' || contactMessage.value === '') {
+        
         message.classList.remove('color-first');
         message.classList.add('color-red');
         message.textContent = 'Write all the input fields';
@@ -210,21 +211,20 @@ const sendEmail = (e) =>{
             message.textContent = '';
         }, 3000);
     } else {
-        emailjs
-        .sendForm('service_i53td28', 'template_qw4765g', '#contact-form', 'dXOg1EhQjMgidPYZ5')
-        .then(
+        emailjs.sendForm('service_v1lc7ia', 'template_e8vk1ep', '#contact-form', 'dXOg1EhQjMgidPYZ5').then(
             () => {
                 message.classList.add('color-first');
                 message.textContent = 'Message sent ✔';
 
                 setTimeout(() => {
                     message.textContent = '';
-                }, 5000);
+                 }, 5000);
             },
-            (error) => {
+             (error) => {
                 alert('OOPs! SOMETHING WENT WRONG...', error);
-            }
+            },
         );
+        
         contactName.value = '';
         contactEmail.value = '';
         contactSubject.value = '';
