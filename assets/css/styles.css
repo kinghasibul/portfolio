@@ -905,7 +905,6 @@ textarea {
 /*=============== CONTACT ===============*/
 .contact {
   padding-bottom: 4rem;
-  position: relative;
 }
 .contact-container {
   grid-template-columns: 5fr 7fr;
@@ -948,6 +947,7 @@ textarea {
 }
 .contact-form {
   row-gap: 1.75rem;
+  position: relative;
 }
 .contact-form-group {
   grid-template-columns: repeat(2, 1fr);
@@ -988,6 +988,7 @@ textarea {
 }
 .color-red {
   color: hsl(5, 69%, 51%);
+  bottom: -2rem;
 }
 .color-first {
   color: var(--first-color);
@@ -1006,11 +1007,28 @@ textarea {
   justify-content: space-between;
 }
 .footer-copyright {
-  font-size: var(--small-font-size);
+  font-size: var(--normal-font-size);
   font-weight: var(--font-bold);
 }
 .footer-copyright span {
   color: var(--first-color);
+}
+.footer-iconTop a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--first-color);
+  border-radius: .5rem;
+  transition: .5s ease;
+}
+.footer-iconTop a:hover {
+  box-shadow: 4px 4px var(--shadow-color);
+}
+.footer-iconTop a i {
+  color: var(--body-color);
+  font-size: var(--large-font-size);
+  font-weight: var(--font-bold);
 }
 
 
