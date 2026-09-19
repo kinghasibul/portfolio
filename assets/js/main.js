@@ -21,9 +21,6 @@ const linkAction = () => {
 };
 
 navLink.forEach((n) => n.addEventListener('click', linkAction));
-
-
-
 /*=============== CHANGE BACKGROUND HEADER ===============*/
 const scrollHeader = () => {
     const header = document.getElementById('header');
@@ -32,7 +29,27 @@ const scrollHeader = () => {
 };
 
 window.addEventListener('scroll', scrollHeader);
+/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections = document.querySelectorAll('section[id]');
 
+const scrollActive = () => {
+    const scrollY = window.pageYOffset;
+
+    sections.forEach((current) => {
+        const sectionHeight = current.offsetHeight,
+        sectionTop = current.offsetTop - 58,
+        sectionId = current.getAttribute('id'),
+        sectionsClass = document.querySelector('.nav-menu a[href*=' + sectionId + ']');
+
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            sectionsClass.classList.add('active-link');
+        } else {
+            sectionsClass.classList.remove('active-link');
+        }
+    });
+};
+
+window.addEventListener('scroll', scrollActive);
 
 
 /*=============== MIXITUP FILTER PORTFOLIO ===============*/
@@ -57,17 +74,3 @@ function activeWork() {
 
 linkWork.forEach((a) => a.addEventListener('click', activeWork));
 
-
-/*=============== SCROLL REVEAL ===============*/
-
-ScrollReveal({ 
-    // reset: true,
-    distance: '80px',
-    duration: 2000,
-    delay: 200
-});
-
-ScrollReveal().reveal('.section-title,.animation-top', { origin: 'top'});
-ScrollReveal().reveal('.animation-right', { origin: 'right'});
-ScrollReveal().reveal('.animation-left', { origin: 'left'});
-ScrollReveal().reveal('.animation-bottom,.swiper-pagination', { origin: 'bottom'});
